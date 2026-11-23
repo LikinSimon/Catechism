@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 11 | Catechism Class 2026-27 — St. Sebastian's Church Nellikkunnu</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    // Safely configure Tailwind CSS once loaded
+    function configureTailwind() {
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                ivory: '#FAF7F2',
+                parchment: '#F2ECE1',
+                maroon: {
+                  DEFAULT: '#5C1A1B',
+                  dark: '#3F1011',
+                  light: '#7A2526'
+                },
+                gold: {
+                  DEFAULT: '#C59B27',
+                  light: '#E2BE53',
+                  dark: '#9E7916',
+                  soft: '#F7EFE0'
+                }
+              },
+              fontFamily: {
+                serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+              }
+            }
+          }
+        };
+      }
+    }
+    configureTailwind();
+    window.addEventListener('load', configureTailwind);
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF7F2;
+      color: #29221E;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    /* Warm Liturgical Hero Background with Attached 'Jesus teaching.png' */
+    .hero-bg {
+      background-color: #3F1011;
+      background-image: 
+        linear-gradient(to bottom, rgba(35, 10, 10, 0.68) 0%, rgba(52, 18, 12, 0.76) 55%, rgba(26, 10, 9, 0.90) 100%),
+        url('Jesus teaching.png'),
+        url('./Jesus%20teaching.png'),
+        radial-gradient(circle at top right, #7A2526, #2B0B0C);
+      background-size: cover;
+      background-position: center 20%;
+      background-repeat: no-repeat;
+    }
+
+    /* Subtle Gold Shimmer Border */
+    .gold-card {
+      border: 1px solid rgba(197, 155, 39, 0.35);
+      box-shadow: 0 10px 30px -10px rgba(92, 26, 27, 0.08);
+    }
+
+    /* Print Styling for Individual Student Report Cards */
+    @media print {
+      body {
+        background: #FFFFFF !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-only-card {
+        box-shadow: none !important;
+        border: 2px solid #5C1A1B !important;
+        margin: 0 !important;
+        padding: 1.5rem !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-gold/30 selection:text-maroon-dark">
+
+  <!-- TOP NAVIGATION BAR -->
+  <nav class="sticky top-0 z-40 bg-maroon-dark/95 backdrop-blur-md text-ivory border-b border-gold/30 shadow-md no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Brand / Home Link -->
+        <button onclick="navigateToHome()" class="flex items-center gap-3 text-left group focus:outline-none">
+          <div class="w-9 h-9 rounded-full bg-gold/20 border border-gold flex items-center justify-center text-gold-light group-hover:bg-gold group-hover:text-maroon-dark transition">
+            <i data-lucide="cross" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-base sm:text-lg tracking-wide text-white block leading-tight">
+              Class 11 &bull; Catechism 2026–27
+            </span>
+            <span class="text-[11px] sm:text-xs text-gold-light/90 tracking-wider uppercase block">
+              St. Sebastian's Church, Nellikkunnu
+            </span>
+          </div>
+        </button>
+
+        <!-- Right Controls -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button onclick="navigateToHome()" id="nav-home-btn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-ivory/90 hover:text-white hover:bg-white/10 transition">
+            <i data-lucide="home" class="w-4 h-4 text-gold-light"></i>
+            <span>Home & Directory</span>
+          </button>
+
+          <button onclick="openHelpModal()" class="p-2 rounded-lg text-gold-light hover:bg-white/10 transition" title="How to Host & Maintain Forever">
+            <i data-lucide="help-circle" class="w-5 h-5"></i>
+          </button>
+
+          <button onclick="toggleTeacherMode()" id="teacher-mode-btn" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition shadow-sm border border-gold/50 bg-gold/15 text-gold-light hover:bg-gold hover:text-maroon-dark">
+            <i data-lucide="lock" id="teacher-lock-icon" class="w-4 h-4"></i>
+            <span id="teacher-mode-label">Teacher Mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TEACHER MAINTENANCE TOOLBAR (Visible only when unlocked) -->
+  <div id="teacher-toolbar" class="hidden bg-amber-950 text-amber-50 border-b-2 border-gold px-4 py-3 shadow-inner no-print">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5 text-sm">
+        <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
+        </span>
+        <div>
+          <strong class="text-gold-light">Teacher Maintenance Mode Active</strong>
+          <span class="text-amber-200/80 block sm:inline sm:ml-2 text-xs">Changes auto-save in your browser. Export updated HTML to publish permanently to GitHub.</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="openHomeSettingsModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-medium transition border border-white/15">
+          <i data-lucide="image" class="w-3.5 h-3.5 text-gold-light"></i>
+          Edit Hero / Verse / Photo
+        </button>
+        <button onclick="exportBackupJSON()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-medium transition border border-white/15">
+          <i data-lucide="download" class="w-3.5 h-3.5 text-gold-light"></i>
+          Backup JSON
+        </button>
+        <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-medium transition border border-white/15 cursor-pointer">
+          <i data-lucide="upload" class="w-3.5 h-3.5 text-gold-light"></i>
+          Restore JSON
+          <input type="file" accept=".json" onchange="importBackupJSON(event)" class="hidden" />
+        </label>
+        <button onclick="exportStandaloneHTML()" class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-gold hover:bg-gold-light text-maroon-dark font-bold text-xs shadow transition">
+          <i data-lucide="file-code-2" class="w-4 h-4"></i>
+          Export Updated index.html
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow">
+
+    <!-- ==================== VIEW 1: HOME PAGE ==================== -->
+    <div id="home-view">
+      
+      <!-- HERO SECTION WITH ATTACHED 'Jesus teaching.png' BACKGROUND -->
+      <section id="hero-section" class="hero-bg relative text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
+          
+          <!-- Parish Emblem & Academic Year Tag -->
+          <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-gold/60 text-gold-light text-xs sm:text-sm font-bold tracking-widest uppercase mb-5 shadow-lg">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              <span>Class 11 &bull; Faith Formation 2026–2027</span>
+            </div>
+
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-md leading-tight">
+              Catechism Class 11 <span class="text-gold-light">(2026–27)</span>
+            </h1>
+            <p class="mt-2 sm:mt-3 font-serif italic text-xl sm:text-3xl text-ivory drop-shadow">
+              St. Sebastian's Church Nellikkunnu
+            </p>
+
+            <!-- Leadership Credits Badge Card -->
+            <div class="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 w-full max-w-2xl">
+              <div class="bg-black/45 backdrop-blur-md border border-gold/40 rounded-2xl px-5 py-3.5 flex items-center gap-3.5 text-left shadow-lg">
+                <div class="w-11 h-11 rounded-xl bg-maroon border border-gold/60 flex items-center justify-center text-gold-light shrink-0">
+                  <i data-lucide="church" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[11px] uppercase tracking-wider text-gold-light/90 font-semibold block">Unit Director</span>
+                  <span class="font-serif text-base sm:text-lg font-bold text-white">Fr. Paulson Thattil</span>
+                </div>
+              </div>
+
+              <div class="bg-black/45 backdrop-blur-md border border-gold/40 rounded-2xl px-5 py-3.5 flex items-center gap-3.5 text-left shadow-lg">
+                <div class="w-11 h-11 rounded-xl bg-maroon border border-gold/60 flex items-center justify-center text-gold-light shrink-0">
+                  <i data-lucide="book-open-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[11px] uppercase tracking-wider text-gold-light/90 font-semibold block">Class Teacher</span>
+                  <span class="font-serif text-base sm:text-lg font-bold text-white">Dr. Likin Simon</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Motivational Thought & New Testament Verse Cards -->
+            <div class="mt-9 grid grid-cols-1 lg:grid-cols-12 gap-5 w-full text-left">
+              
+              <!-- Motivational Thought on Catechism (Tailored for Class 11) -->
+              <div class="lg:col-span-7 bg-ivory/95 text-stone-800 rounded-2xl p-6 sm:p-7 shadow-2xl border-t-4 border-maroon">
+                <div class="flex items-center gap-2 text-maroon font-bold text-xs uppercase tracking-widest mb-2.5">
+                  <i data-lucide="heart-handshake" class="w-4 h-4 text-gold-dark"></i>
+                  <span>Class 11 Catechism Reflection</span>
+                </div>
+                <p id="hero-thought-text" class="text-stone-700 text-sm sm:text-base leading-relaxed">
+                  Class 11 is a defining milestone where childhood faith matures into personal conviction and joyful discipleship. Sitting at the feet of Jesus our Teacher, we discover how the Gospel, the Sacraments, and the teachings of the Church guide our choices, friendships, and purpose—empowering each of you to stand strong in truth and shine as young witnesses of Christ in today's world.
+                </p>
+              </div>
+
+              <!-- Highlighted New Testament Bible Verse -->
+              <div class="lg:col-span-5 bg-maroon-dark/90 backdrop-blur-md text-ivory rounded-2xl p-6 sm:p-7 shadow-2xl border border-gold/60 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 opacity-10 pointer-events-none">
+                  <i data-lucide="book-open" class="w-32 h-32 text-gold"></i>
+                </div>
+                <div>
+                  <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-gold/20 text-gold-light text-[11px] font-bold uppercase tracking-wider mb-3">
+                    <i data-lucide="star" class="w-3.5 h-3.5"></i>
+                    <span>New Testament Spotlight</span>
+                  </div>
+                  <blockquote id="hero-verse-text" class="font-serif italic text-lg sm:text-xl text-white leading-snug">
+                    “Let no one despise your youth, but set the believers an example in speech and conduct, in love, in faith, in purity.”
+                  </blockquote>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gold/30 flex items-center justify-between">
+                  <span id="hero-verse-ref" class="font-semibold text-gold-light text-sm tracking-wide">
+                    — 1 Timothy 4:12 (New Testament)
+                  </span>
+                  <span class="text-xs text-ivory/60">Class 11 Motto</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLASS OVERVIEW & STUDENT DIRECTORY SECTION -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        
+        <!-- Section Header + Search & Quick Stats -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-stone-200">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-gold-dark block mb-1">
+              Class 11 &bull; 28 Students &bull; Individual Portals
+            </span>
+            <h2 class="font-serif text-2xl sm:text-4xl font-bold text-maroon">
+              Class 11 Student Directory & Progress Pages
+            </h2>
+            <p class="text-stone-600 text-sm sm:text-base mt-1.5 max-w-2xl">
+              Select any Class 11 student below to view or customize their individual catechism profile, attendance, faith milestones, and teacher remarks.
+            </p>
+          </div>
+
+          <!-- Search Input -->
+          <div class="w-full md:w-80">
+            <label for="student-search" class="sr-only">Search student by name or roll number</label>
+            <div class="relative">
+              <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+              <input 
+                type="text" 
+                id="student-search" 
+                oninput="filterStudents()"
+                placeholder="Search by name or Sl. No..." 
+                class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold shadow-sm"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Class Summary Strip -->
+        <div id="class-stats-strip" class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 my-6">
+          <!-- Populated dynamically by JS -->
+        </div>
+
+        <!-- 28 STUDENTS GRID -->
+        <div id="students-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 mt-6">
+          <!-- Student cards rendered dynamically -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="no-students-found" class="hidden text-center py-14 bg-white rounded-2xl border border-stone-200 mt-6">
+          <i data-lucide="user-search" class="w-10 h-10 text-stone-400 mx-auto mb-2"></i>
+          <p class="font-serif text-lg text-stone-700 font-semibold">No matching student found</p>
+          <p class="text-sm text-stone-500 mt-1">Try searching with a different name or Roll Number (1–28).</p>
+          <button onclick="resetSearch()" class="mt-4 px-4 py-2 rounded-xl bg-maroon text-white text-sm font-medium hover:bg-maroon-dark transition">
+            Show All 28 Students
+          </button>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ==================== VIEW 2: INDIVIDUAL STUDENT PAGE ==================== -->
+    <div id="student-view" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      
+      <!-- Top Breadcrumb & Navigation Controls -->
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6 no-print">
+        <button onclick="navigateToHome()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-stone-300 text-stone-700 hover:bg-parchment hover:text-maroon font-medium text-sm shadow-sm transition">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Back to All Students</span>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <button onclick="copyStudentLink()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-stone-700 hover:border-gold text-xs sm:text-sm font-medium shadow-sm transition">
+            <i data-lucide="share-2" class="w-4 h-4 text-gold-dark"></i>
+            <span>Copy Direct Link</span>
+          </button>
+          <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-stone-700 hover:border-gold text-xs sm:text-sm font-medium shadow-sm transition">
+            <i data-lucide="printer" class="w-4 h-4 text-maroon"></i>
+            <span class="hidden sm:inline">Print Card</span>
+          </button>
+          <div class="flex items-center rounded-xl bg-white border border-stone-300 overflow-hidden shadow-sm">
+            <button onclick="navigateAdjacentStudent(-1)" class="p-2 hover:bg-parchment text-stone-700 border-r border-stone-200" title="Previous Student">
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            </button>
+            <button onclick="navigateAdjacentStudent(1)" class="p-2 hover:bg-parchment text-stone-700" title="Next Student">
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDENT PROFILE CARD (Rendered Dynamically) -->
+      <div id="student-profile-container" class="print-only-card">
+        <!-- Populated by JS -->
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-maroon-dark text-ivory/80 border-t border-gold/30 mt-12 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-serif text-white font-semibold text-base">
+          Class 11 &bull; Catechism Class 2026–27 &bull; St. Sebastian's Church Nellikkunnu
+        </p>
+        <p class="text-xs text-gold-light/80 mt-1">
+          Unit Director: Fr. Paulson Thattil &nbsp;|&nbsp; Class Teacher: Dr. Likin Simon
+        </p>
+      </div>
+      <div class="text-xs text-ivory/60">
+        Designed for Permanent Free Hosting &bull; Ad Majorem Dei Gloriam
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & TOAST ==================== -->
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden transform transition-all duration-300">
+    <div class="bg-maroon-dark text-white border border-gold px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 text-sm font-medium">
+      <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-light shrink-0"></i>
+      <span id="toast-message">Saved successfully!</span>
+    </div>
+  </div>
+
+  <!-- Teacher PIN Unlock Modal -->
+  <div id="pin-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-gold/40">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <div class="flex items-center gap-2 text-maroon font-serif font-bold text-xl">
+          <i data-lucide="key-round" class="w-5 h-5 text-gold-dark"></i>
+          <span>Teacher Maintenance Access</span>
+        </div>
+        <button onclick="closePinModal()" class="text-stone-400 hover:text-stone-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <p class="text-sm text-stone-600 mt-3">
+        Enter the Teacher PIN to customize individual student records, attendance, prayer progress, and remarks.
+      </p>
+      <div class="mt-4">
+        <label class="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-1.5">Teacher PIN</label>
+        <input type="password" id="pin-input" onkeyup="if(event.key==='Enter') verifyPin()" placeholder="Enter PIN (Default: 2026)" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-gold text-center text-lg tracking-widest font-bold" />
+        <p id="pin-error" class="hidden text-xs text-red-600 mt-1.5 font-medium">Incorrect PIN. Default PIN is 2026.</p>
+      </div>
+      <div class="mt-6 flex items-center justify-end gap-2">
+        <button onclick="closePinModal()" class="px-4 py-2 rounded-xl text-sm font-medium text-stone-600 hover:bg-stone-100">Cancel</button>
+        <button onclick="verifyPin()" class="px-5 py-2 rounded-xl text-sm font-bold bg-maroon text-white hover:bg-maroon-dark shadow">Unlock Editor</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home Hero & Verse Editor Modal -->
+  <div id="home-settings-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-gold/40 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <h3 class="font-serif font-bold text-xl text-maroon">Customize Home Page Content</h3>
+        <button onclick="closeHomeSettingsModal()" class="text-stone-400 hover:text-stone-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="space-y-4 mt-4 text-sm">
+        <div>
+          <label class="block font-semibold text-stone-700 mb-1">Hero Background Picture (Attached Image or Upload)</label>
+          <input type="text" id="edit-hero-bg" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:outline-none" placeholder="Jesus teaching.png" />
+          <div class="mt-2 flex flex-wrap items-center gap-2">
+            <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-parchment hover:bg-gold/20 text-maroon text-xs font-semibold border border-gold/40 cursor-pointer transition">
+              <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
+              <span>Select Local Image File</span>
+              <input type="file" accept="image/*" onchange="handleHeroImageUpload(event)" class="hidden" />
+            </label>
+            <span class="text-xs text-stone-500">Default: <code>Jesus teaching.png</code> (place in same GitHub folder).</span>
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold text-stone-700 mb-1">Class 11 Motivational Thought on Catechism</label>
+          <textarea id="edit-hero-thought" rows="3" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:outline-none"></textarea>
+        </div>
+        <div>
+          <label class="block font-semibold text-stone-700 mb-1">Highlighted New Testament Verse</label>
+          <textarea id="edit-hero-verse" rows="2" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:outline-none"></textarea>
+        </div>
+        <div>
+          <label class="block font-semibold text-stone-700 mb-1">Scripture Reference</label>
+          <input type="text" id="edit-hero-ref" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:outline-none" />
+        </div>
+      </div>
+      <div class="mt-6 flex justify-end gap-2">
+        <button onclick="closeHomeSettingsModal()" class="px-4 py-2 rounded-xl text-sm font-medium text-stone-600 hover:bg-stone-100">Cancel</button>
+        <button onclick="saveHomeSettings()" class="px-5 py-2 rounded-xl text-sm font-bold bg-maroon text-white hover:bg-maroon-dark shadow">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Permanent Free Hosting & Maintenance Guide Modal -->
+  <div id="help-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-7 shadow-2xl border border-gold/40 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <div class="flex items-center gap-2 text-maroon font-serif font-bold text-xl">
+          <i data-lucide="infinity" class="w-6 h-6 text-gold-dark"></i>
+          <span>How to Maintain This Website Free Forever</span>
+        </div>
+        <button onclick="closeHelpModal()" class="text-stone-400 hover:text-stone-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 mt-4 text-sm text-stone-700 leading-relaxed">
+        <div class="p-4 rounded-xl bg-gold-soft border border-gold/40">
+          <p class="font-bold text-maroon">100% Zero-Cost Architecture (No Database or Hosting Fees Ever)</p>
+          <p class="mt-1 text-stone-700">This entire portal—including all 28 individual student pages—lives inside a single <code>index.html</code> file so it can run permanently on <strong>GitHub Pages</strong> or <strong>Cloudflare Pages</strong> for ₹0.</p>
+        </div>
+
+        <ol class="list-decimal pl-5 space-y-2.5">
+          <li>
+            <strong>Initial Setup on GitHub Pages:</strong> Create a free account on <code>github.com</code>, create a public repository (e.g., <code>nellikkunnu-catechism</code>), and upload two files: this <code>index.html</code> file and your background photo named <code>Jesus teaching.png</code>. Turn on <strong>Settings &rarr; Pages &rarr; Deploy from main branch</strong>.
+          </li>
+          <li>
+            <strong>Customizing Student Pages Anytime:</strong> Click <strong>Teacher Mode</strong> in the top bar (Default PIN: <code class="px-1.5 py-0.5 bg-stone-100 rounded font-bold">2026</code>). Open any of the 28 student pages to update their Patron Saint, Attendance %, Term Marks, Prayers Learned, Badges, and Personal Remarks.
+          </li>
+          <li>
+            <strong>Publishing Updates Forever:</strong> After editing students, click <strong>Export Updated index.html</strong> in the Teacher Toolbar. Replace the <code>index.html</code> file in your GitHub repository with the newly downloaded file—every student and parent will immediately see the updated records!
+          </li>
+          <li>
+            <strong>Direct Student Links:</strong> Every student has a permanent direct link (e.g., <code>your-site-url/#student-1</code> for AADIL ALWIN) that you can share directly with parents via WhatsApp.
+          </li>
+        </ol>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="closeHelpModal()" class="px-5 py-2 rounded-xl text-sm font-bold bg-maroon text-white hover:bg-maroon-dark">Got It</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== APPLICATION DATA & LOGIC ==================== -->
+  <script id="catechism-data-script">
+    // Class 11 Catechism Prayers & Faith Formation Milestones tracked for every student
+    const DEFAULT_PRAYERS = [
+      "Nicene-Constantinopolitan Creed",
+      "Angelus & Regina Caeli",
+      "Act of Faith, Hope & Charity",
+      "The Beatitudes (Matthew 5)",
+      "Ten Commandments & Precepts of the Church",
+      "Seven Sacraments & Gifts of the Holy Spirit",
+      "Holy Rosary & Liturgical Year Reflections"
+    ];
+
+    // Embedded State (Automatically updated when Teacher exports new index.html)
+    const INITIAL_STATE = {
+      pin: "2026",
+      home: {
+        bgImage: "Jesus teaching.png",
+        thought: "Class 11 is a defining milestone where childhood faith matures into personal conviction and joyful discipleship. Sitting at the feet of Jesus our Teacher, we discover how the Gospel, the Sacraments, and the teachings of the Church guide our choices, friendships, and purpose—empowering each of you to stand strong in truth and shine as young witnesses of Christ in today's world.",
+        verse: "“Let no one despise your youth, but set the believers an example in speech and conduct, in love, in faith, in purity.”",
+        verseRef: "— 1 Timothy 4:12 (New Testament)"
+      },
+      students: [
+        { id: 1, name: "AADIL ALWIN", patronSaint: "St. Aloysius Gonzaga", motto: "Walk in the light of Christ", attendance: 95, massAttendance: 92, term1Marks: 46, term2Marks: 48, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)"], badges: ["Regular Attendee", "Altar Server"], remarks: "Active participant in Class 11 discussions and scripture reading.", parentNote: "Keep up the wonderful spirit of prayer at home." },
+        { id: 2, name: "AIBEL BABY P.", patronSaint: "St. Sebastian", motto: "Courageous in faith", attendance: 92, massAttendance: 90, term1Marks: 44, term2Marks: 45, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity"], badges: ["Good Conduct"], remarks: "Respectful, attentive, and eager to deepen faith understanding.", parentNote: "Encouraged to continue daily evening prayers." },
+        { id: 3, name: "ALAN PAULY", patronSaint: "St. Paul the Apostle", motto: "Faith, hope, and love", attendance: 94, massAttendance: 94, term1Marks: 45, term2Marks: 47, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "Ten Commandments & Precepts of the Church"], badges: ["Bible Quiz Star"], remarks: "Shows great enthusiasm during Class 11 catechism quizzes.", parentNote: "Wonderful support from family." },
+        { id: 4, name: "ALFIN SAJI", patronSaint: "St. Alphonsa", motto: "Joy in small sacrifices", attendance: 90, massAttendance: 88, term1Marks: 42, term2Marks: 44, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "The Beatitudes (Matthew 5)"], badges: ["Helping Hand"], remarks: "Always ready to help classmates and organize class sessions.", parentNote: "Consistent progress across Class 11 lessons." },
+        { id: 5, name: "ANUGRAAH SHAJU", patronSaint: "St. Thomas the Apostle", motto: "My Lord and my God", attendance: 96, massAttendance: 95, term1Marks: 47, term2Marks: 48, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)", "Seven Sacraments & Gifts of the Holy Spirit"], badges: ["Prayer Champion", "100% Punctual"], remarks: "Exemplary devotion during Holy Mass and youth liturgy.", parentNote: "A role model for fellow Class 11 students." },
+        { id: 6, name: "ARON ROX", patronSaint: "St. Dominic Savio", motto: "Joyful holiness every day", attendance: 91, massAttendance: 89, term1Marks: 43, term2Marks: 45, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity"], badges: ["Choir & Hymns"], remarks: "Sings liturgical hymns with great joy and energy.", parentNote: "Keep nurturing his musical talent for parish liturgy." },
+        { id: 7, name: "AUSTIN JOSE SHAJI", patronSaint: "St. Joseph", motto: "Faithful in heart and deed", attendance: 93, massAttendance: 91, term1Marks: 45, term2Marks: 46, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "Ten Commandments & Precepts of the Church"], badges: ["Scripture Reader"], remarks: "Reads Gospel passages clearly and thoughtfully during assembly.", parentNote: "Steady and commendable growth." },
+        { id: 8, name: "BENJAMIN MARY JOFFY", patronSaint: "St. John Bosco", motto: "Serve the Lord with gladness", attendance: 95, massAttendance: 93, term1Marks: 46, term2Marks: 47, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)"], badges: ["Kindness Award"], remarks: "Friendly, polite, and attentive throughout every Class 11 session.", parentNote: "Thank you for encouraging regular Sunday attendance." },
+        { id: 9, name: "CHRISTINO SIBI", patronSaint: "St. Christopher", motto: "Bearing Christ to others", attendance: 92, massAttendance: 90, term1Marks: 44, term2Marks: 46, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity"], badges: ["Active Learner"], remarks: "Asks thoughtful questions about Church history and scripture.", parentNote: "Doing very well in class activities." },
+        { id: 10, name: "EVAN SHOU CHAKOLA", patronSaint: "St. John the Evangelist", motto: "Abide in His love", attendance: 94, massAttendance: 92, term1Marks: 45, term2Marks: 47, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "Seven Sacraments & Gifts of the Holy Spirit"], badges: ["Neat Workbook"], remarks: "Maintains a very neat catechism notebook and reflection journal.", parentNote: "Great dedication shown every week." },
+        { id: 11, name: "IMMANUEL BABU", patronSaint: "Christ the King", motto: "God is with us", attendance: 96, massAttendance: 95, term1Marks: 48, term2Marks: 49, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)", "Ten Commandments & Precepts of the Church", "Seven Sacraments & Gifts of the Holy Spirit"], badges: ["Top Scholar", "Altar Server"], remarks: "Outstanding understanding of Class 11 catechism and scripture.", parentNote: "Blessed and bright academic-year performance." },
+        { id: 12, name: "JEBIN ROBIN", patronSaint: "St. Jude Thaddeus", motto: "Trust in God always", attendance: 90, massAttendance: 88, term1Marks: 42, term2Marks: 44, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "The Beatitudes (Matthew 5)"], badges: ["Team Spirit"], remarks: "Participates enthusiastically in youth group discussions.", parentNote: "Encouraged to review the Beatitudes this month." },
+        { id: 13, name: "JOEL GEO", patronSaint: "St. George", motto: "Strong in faith and truth", attendance: 93, massAttendance: 91, term1Marks: 44, term2Marks: 46, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "Ten Commandments & Precepts of the Church"], badges: ["Faithful Attendee"], remarks: "Punctual and attentive during Sunday morning catechism.", parentNote: "Consistent and sincere effort." },
+        { id: 14, name: "JOHN C TITTO", patronSaint: "St. John the Baptist", motto: "Prepare the way of the Lord", attendance: 95, massAttendance: 94, term1Marks: 46, term2Marks: 48, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)", "Seven Sacraments & Gifts of the Holy Spirit"], badges: ["Scripture Star"], remarks: "Excellent memory for New Testament verses and Church teachings.", parentNote: "Very proud of his progress." },
+        { id: 15, name: "JONADH SHIJU", patronSaint: "St. Francis of Assisi", motto: "Instrument of peace", attendance: 92, massAttendance: 90, term1Marks: 43, term2Marks: 45, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity"], badges: ["Peacemaker"], remarks: "Gentle, courteous, and respectful to teachers and peers.", parentNote: "Continues to grow beautifully in faith." },
+        { id: 16, name: "JOSE PAUL BINOY", patronSaint: "St. Joseph & St. Paul", motto: "Work and pray", attendance: 94, massAttendance: 92, term1Marks: 45, term2Marks: 47, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "Ten Commandments & Precepts of the Church"], badges: ["Dedicated Student"], remarks: "Completes all Class 11 assignments on time with care.", parentNote: "Keep shining in faith and studies." },
+        { id: 17, name: "NOBEL P VINOD", patronSaint: "St. Stephen", motto: "Steadfast in grace", attendance: 91, massAttendance: 90, term1Marks: 44, term2Marks: 45, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity"], badges: ["Good Listener"], remarks: "Listens carefully and shares meaningful faith reflections.", parentNote: "Steady improvement across the term." },
+        { id: 18, name: "SHAUN ROY", patronSaint: "St. Michael the Archangel", motto: "Who is like God?", attendance: 94, massAttendance: 93, term1Marks: 45, term2Marks: 46, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)"], badges: ["Altar Server"], remarks: "Reverent in church and helpful during Class 11 assembly.", parentNote: "Wonderful commitment to parish life." },
+        { id: 19, name: "AKSA MAJO", patronSaint: "St. Agnes", motto: "Pure in heart", attendance: 97, massAttendance: 96, term1Marks: 48, term2Marks: 49, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)", "Ten Commandments & Precepts of the Church", "Seven Sacraments & Gifts of the Holy Spirit"], badges: ["Excellence Award", "Choir Angel"], remarks: "Exceptional devotion, neatness, and mastery of Class 11 syllabus.", parentNote: "A true blessing to our Class 11 community." },
+        { id: 20, name: "ALEENA SANTHOSH", patronSaint: "St. Helena", motto: "Seek the Cross of Christ", attendance: 95, massAttendance: 94, term1Marks: 47, term2Marks: 48, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)", "Seven Sacraments & Gifts of the Holy Spirit"], badges: ["Prayer Leader"], remarks: "Leads Class 11 opening and closing prayers with grace.", parentNote: "Consistent and joyful participation." },
+        { id: 21, name: "ANANYA MARIYA DAISON", patronSaint: "Blessed Virgin Mary", motto: "Let it be done according to Thy word", attendance: 96, massAttendance: 95, term1Marks: 47, term2Marks: 49, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)", "Ten Commandments & Precepts of the Church", "Holy Rosary & Liturgical Year Reflections"], badges: ["Rosary Devotee", "Top Performer"], remarks: "Deep devotion to Mother Mary and wonderful class discipline.", parentNote: "Keep inspiring everyone with your kindness." },
+        { id: 22, name: "ANGEL SUJO", patronSaint: "Holy Guardian Angels", motto: "Guided by heavenly light", attendance: 93, massAttendance: 92, term1Marks: 45, term2Marks: 46, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)"], badges: ["Cheerful Helper"], remarks: "Brings warmth and positivity to every Sunday Class 11 session.", parentNote: "Very good progress in scripture reflections." },
+        { id: 23, name: "ANGELIN STEEJAN", patronSaint: "St. Angela Merici", motto: "Rooted in charity", attendance: 94, massAttendance: 93, term1Marks: 46, term2Marks: 47, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "Ten Commandments & Precepts of the Church"], badges: ["Creative Arts"], remarks: "Expresses Gospel themes beautifully through notes and projects.", parentNote: "Wonderful creativity and reverence." },
+        { id: 24, name: "ANNA ROSE", patronSaint: "St. Rose of Lima", motto: "Bloom where God plants you", attendance: 96, massAttendance: 95, term1Marks: 47, term2Marks: 48, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)", "Seven Sacraments & Gifts of the Holy Spirit"], badges: ["Scripture Star", "Choir"], remarks: "Attentive, articulate, and deeply committed to living her faith.", parentNote: "Exemplary conduct throughout the year." },
+        { id: 25, name: "ANNLIA SUSAN RIJO", patronSaint: "St. Anne", motto: "Faith passed through generations", attendance: 94, massAttendance: 92, term1Marks: 45, term2Marks: 47, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)"], badges: ["Kind Heart"], remarks: "Always caring and supportive toward fellow students.", parentNote: "Great progress and sincere effort." },
+        { id: 26, name: "ELOA RACHEL", patronSaint: "St. Elizabeth", motto: "Blessed is she who believed", attendance: 95, massAttendance: 94, term1Marks: 46, term2Marks: 48, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "Ten Commandments & Precepts of the Church", "Seven Sacraments & Gifts of the Holy Spirit"], badges: ["Bible Reader"], remarks: "Reads scripture with clarity and answers questions thoughtfully.", parentNote: "Keep growing in wisdom and grace." },
+        { id: 27, name: "HANNA SUNNY", patronSaint: "St. Hannah", motto: "My heart rejoices in the Lord", attendance: 95, massAttendance: 93, term1Marks: 46, term2Marks: 47, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)"], badges: ["Joyful Spirit"], remarks: "Active in class hymns, prayers, and Gospel reflections.", parentNote: "Consistent and dedicated learner." },
+        { id: 28, name: "SANIYA SHAJU", patronSaint: "St. Cecilia", motto: "Sing to the Lord a new song", attendance: 96, massAttendance: 95, term1Marks: 47, term2Marks: 48, prayersLearned: ["Nicene-Constantinopolitan Creed", "Angelus & Regina Caeli", "Act of Faith, Hope & Charity", "The Beatitudes (Matthew 5)", "Ten Commandments & Precepts of the Church"], badges: ["Liturgical Choir", "Star Student"], remarks: "Wonderful participation in parish liturgy and Class 11 lessons.", parentNote: "May God continue to bless her abundantly." }
+      ]
+    };
+
+    const STORAGE_KEY = "nellikkunnu_catechism_class11_2026_27_v1";
+    let appState = loadAppState();
+    let isTeacherMode = false;
+    let currentStudentId = null;
+
+    function loadAppState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (parsed && Array.isArray(parsed.students) && parsed.students.length > 0) {
+            return {
+              ...INITIAL_STATE,
+              ...parsed,
+              home: { ...INITIAL_STATE.home, ...(parsed.home || {}) }
+            };
+          }
+        }
+      } catch (e) {
+        console.warn("Could not read saved state from localStorage:", e);
+      }
+      return JSON.parse(JSON.stringify(INITIAL_STATE));
+    }
+
+    function persistState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+      } catch (e) {
+        console.warn("Could not save state to localStorage:", e);
+      }
+    }
+
+    // Apply Home Page Customizable Fields
+    function applyHomeContent() {
+      const hero = document.getElementById("hero-section");
+      const bg = appState.home.bgImage || "Jesus teaching.png";
+      const encodedBg = bg.startsWith("data:") || bg.startsWith("http") ? bg : encodeURI(bg);
+      hero.style.backgroundImage = `linear-gradient(to bottom, rgba(35, 10, 10, 0.68) 0%, rgba(52, 18, 12, 0.76) 55%, rgba(26, 10, 9, 0.90) 100%), url('${bg}'), url('${encodedBg}'), radial-gradient(circle at top right, #7A2526, #2B0B0C)`;
+
+      document.getElementById("hero-thought-text").textContent = appState.home.thought;
+      document.getElementById("hero-verse-text").textContent = appState.home.verse;
+      document.getElementById("hero-verse-ref").textContent = appState.home.verseRef;
+    }
+
+    // Render Class Quick Stats
+    function renderClassStats() {
+      const total = appState.students.length;
+      const avgAtt = Math.round(appState.students.reduce((sum, s) => sum + Number(s.attendance || 0), 0) / total);
+      const avgMarks = (appState.students.reduce((sum, s) => sum + Number(s.term1Marks || 0) + Number(s.term2Marks || 0), 0) / total).toFixed(1);
+      const totalPrayers = appState.students.reduce((sum, s) => sum + (s.prayersLearned ? s.prayersLearned.length : 0), 0);
+
+      document.getElementById("class-stats-strip").innerHTML = `
+        <div class="bg-white rounded-2xl p-4 gold-card flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-maroon/10 text-maroon flex items-center justify-center shrink-0">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-xs text-stone-500 font-medium block">Total Students</span>
+            <span class="font-serif text-xl font-bold text-maroon">${total} Children</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-4 gold-card flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-xs text-stone-500 font-medium block">Class Attendance</span>
+            <span class="font-serif text-xl font-bold text-stone-800">${avgAtt}% Avg</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-4 gold-card flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 text-gold-dark flex items-center justify-center shrink-0">
+            <i data-lucide="award" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-xs text-stone-500 font-medium block">Avg Catechism Score</span>
+            <span class="font-serif text-xl font-bold text-stone-800">${avgMarks} / 100</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-4 gold-card flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-800 flex items-center justify-center shrink-0">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-xs text-stone-500 font-medium block">Prayers Mastered</span>
+            <span class="font-serif text-xl font-bold text-stone-800">${totalPrayers} Milestones</span>
+          </div>
+        </div>
+      `;
+    }
+
+    // Render 28 Student Cards
+    function renderStudentsGrid(filterQuery = "") {
+      const grid = document.getElementById("students-grid");
+      const emptyState = document.getElementById("no-students-found");
+      const q = filterQuery.trim().toLowerCase();
+
+      const filtered = appState.students.filter(s => 
+        s.name.toLowerCase().includes(q) || 
+        String(s.id) === q ||
+        (s.patronSaint && s.patronSaint.toLowerCase().includes(q))
+      );
+
+      if (filtered.length === 0) {
+        grid.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        lucide.createIcons();
+        return;
+      }
+
+      emptyState.classList.add("hidden");
+      grid.innerHTML = filtered.map(student => {
+        const totalScore = Number(student.term1Marks || 0) + Number(student.term2Marks || 0);
+        const prayerCount = student.prayersLearned ? student.prayersLearned.length : 0;
+        const primaryBadge = (student.badges && student.badges.length > 0) ? student.badges[0] : "Catechism Student";
+
+        return `
+          <div onclick="openStudentPage(${student.id})" class="group bg-white rounded-2xl p-5 gold-card hover:border-gold hover:-translate-y-1 transition-all duration-200 cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-maroon text-gold-light font-serif font-bold text-sm shadow-sm group-hover:bg-gold group-hover:text-maroon-dark transition">
+                  ${String(student.id).padStart(2, '0')}
+                </span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gold-soft text-maroon text-[11px] font-semibold border border-gold/30">
+                  <i data-lucide="award" class="w-3 h-3 text-gold-dark"></i>
+                  ${escapeHTML(primaryBadge)}
+                </span>
+              </div>
+
+              <h3 class="mt-3.5 font-serif font-bold text-lg text-stone-900 group-hover:text-maroon transition leading-snug">
+                ${escapeHTML(student.name)}
+              </h3>
+              <p class="text-xs text-stone-500 mt-0.5 flex items-center gap-1">
+                <i data-lucide="shield" class="w-3 h-3 text-gold-dark shrink-0"></i>
+                <span class="truncate">Patron: ${escapeHTML(student.patronSaint || "St. Sebastian")}</span>
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3.5 border-t border-stone-100">
+              <div class="flex items-center justify-between text-xs text-stone-600 mb-2">
+                <span>Attendance: <strong class="text-emerald-700">${student.attendance}%</strong></span>
+                <span>Score: <strong class="text-maroon">${totalScore}/100</strong></span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-stone-500">${prayerCount}/${DEFAULT_PRAYERS.length} Prayers</span>
+                <span class="inline-flex items-center gap-1 font-semibold text-maroon group-hover:translate-x-0.5 transition">
+                  <span>${isTeacherMode ? "Edit Page" : "Open Page"}</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      lucide.createIcons();
+    }
+
+    function filterStudents() {
+      const val = document.getElementById("student-search").value;
+      renderStudentsGrid(val);
+    }
+
+    function resetSearch() {
+      document.getElementById("student-search").value = "";
+      renderStudentsGrid("");
+    }
+
+    // URL Hash Navigation (#student-1 ... #student-28)
+    function handleHashRouting() {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith("#student-")) {
+        const id = parseInt(hash.replace("#student-", ""), 10);
+        const exists = appState.students.find(s => s.id === id);
+        if (exists) {
+          showStudentView(id);
+          return;
+        }
+      }
+      showHomeView();
+    }
+
+    function navigateToHome() {
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+      showHomeView();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openStudentPage(id) {
+      window.location.hash = `student-${id}`;
+    }
+
+    function navigateAdjacentStudent(delta) {
+      if (!currentStudentId) return;
+      let nextId = currentStudentId + delta;
+      if (nextId < 1) nextId = appState.students.length;
+      if (nextId > appState.students.length) nextId = 1;
+      openStudentPage(nextId);
+    }
+
+    function showHomeView() {
+      currentStudentId = null;
+      document.getElementById("student-view").classList.add("hidden");
+      document.getElementById("home-view").classList.remove("hidden");
+      renderClassStats();
+      renderStudentsGrid(document.getElementById("student-search").value);
+    }
+
+    function showStudentView(id) {
+      currentStudentId = id;
+      document.getElementById("home-view").classList.add("hidden");
+      document.getElementById("student-view").classList.remove("hidden");
+      renderIndividualStudent(id);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Render Individual Custom Student Page (Read Mode + Teacher Edit Form)
+    function renderIndividualStudent(id) {
+      const student = appState.students.find(s => s.id === id);
+      if (!student) return;
+
+      const container = document.getElementById("student-profile-container");
+      const totalMarks = Number(student.term1Marks || 0) + Number(student.term2Marks || 0);
+      const prayerCount = student.prayersLearned ? student.prayersLearned.length : 0;
+      const prayerPct = Math.round((prayerCount / DEFAULT_PRAYERS.length) * 100);
+
+      // Badges HTML
+      const badgesHTML = (student.badges && student.badges.length > 0)
+        ? student.badges.map(b => `
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 border border-gold/50 text-gold-light text-xs font-semibold">
+              <i data-lucide="award" class="w-3.5 h-3.5"></i>
+              ${escapeHTML(b)}
+            </span>
+          `).join("")
+        : `<span class="text-xs text-ivory/60 italic">No badges assigned yet</span>`;
+
+      // Prayers Checklist HTML
+      const prayersHTML = DEFAULT_PRAYERS.map((prayer, idx) => {
+        const learned = student.prayersLearned && student.prayersLearned.includes(prayer);
+        if (isTeacherMode) {
+          return `
+            <label class="flex items-center gap-3 p-3 rounded-xl border ${learned ? 'bg-emerald-50/70 border-emerald-200' : 'bg-stone-50 border-stone-200'} cursor-pointer hover:border-gold transition">
+              <input type="checkbox" class="prayer-checkbox w-4 h-4 accent-maroon rounded" value="${escapeHTML(prayer)}" ${learned ? 'checked' : ''} />
+              <span class="text-sm font-medium ${learned ? 'text-stone-900' : 'text-stone-500'}">${escapeHTML(prayer)}</span>
+            </label>
+          `;
+        } else {
+          return `
+            <div class="flex items-center justify-between p-3 rounded-xl border ${learned ? 'bg-emerald-50/60 border-emerald-200 text-stone-900' : 'bg-stone-50/70 border-stone-200 text-stone-400'}">
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="${learned ? 'check-circle-2' : 'circle'}" class="w-4 h-4 ${learned ? 'text-emerald-600' : 'text-stone-300'} shrink-0"></i>
+                <span class="text-sm font-medium">${escapeHTML(prayer)}</span>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider ${learned ? 'text-emerald-700' : 'text-stone-400'}">
+                ${learned ? 'Learned' : 'In Progress'}
+              </span>
+            </div>
+          `;
+        }
+      }).join("");
+
+      container.innerHTML = `
+        <div class="bg-white rounded-3xl overflow-hidden gold-card shadow-xl">
+          
+          <!-- Student Banner Header -->
+          <div class="bg-gradient-to-r from-maroon-dark via-maroon to-maroon-light text-white p-6 sm:p-9 relative">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+              <div class="flex items-center gap-4 sm:gap-5">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gold text-maroon-dark flex flex-col items-center justify-center shadow-lg shrink-0 border-2 border-white/30">
+                  <span class="text-[10px] uppercase font-bold tracking-wider opacity-80">Sl. No.</span>
+                  <span class="font-serif text-2xl sm:text-3xl font-extrabold leading-none">${String(student.id).padStart(2, '0')}</span>
+                </div>
+                <div>
+                  <div class="text-xs uppercase tracking-widest text-gold-light font-semibold">
+                    Class 11 &bull; St. Sebastian's Church Nellikkunnu &bull; 2026–27
+                  </div>
+                  <h1 class="font-serif text-2xl sm:text-4xl font-bold text-white mt-1">
+                    ${escapeHTML(student.name)}
+                  </h1>
+                  <p class="text-sm text-ivory/90 mt-1 flex items-center gap-1.5">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-gold-light"></i>
+                    <span>Patron Saint: <strong>${escapeHTML(student.patronSaint || "St. Sebastian")}</strong></span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Quick Action for Teacher -->
+              <div class="no-print">
+                ${!isTeacherMode ? `
+                  <button onclick="toggleTeacherMode()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/15 hover:bg-gold hover:text-maroon-dark text-white text-xs font-semibold border border-white/25 transition">
+                    <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                    <span>Customize This Student</span>
+                  </button>
+                ` : `
+                  <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-300/40 text-emerald-200 text-xs font-bold">
+                    <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
+                    <span>Editing Student #${student.id}</span>
+                  </span>
+                `}
+              </div>
+            </div>
+
+            <!-- Badges Row -->
+            <div class="mt-6 pt-5 border-t border-white/15 flex flex-wrap items-center gap-2">
+              <span class="text-xs uppercase tracking-wider text-ivory/70 mr-1 font-semibold">Recognitions:</span>
+              ${badgesHTML}
+            </div>
+          </div>
+
+          <!-- BODY CONTENT: READ MODE vs TEACHER EDIT MODE -->
+          <div class="p-6 sm:p-9">
+            ${isTeacherMode ? renderStudentEditForm(student) : `
+              
+              <!-- Faith Motto Banner -->
+              <div class="bg-parchment/70 border border-gold/30 rounded-2xl p-4 sm:p-5 mb-7 flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-full bg-maroon/10 text-maroon flex items-center justify-center shrink-0">
+                  <i data-lucide="quote" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[11px] uppercase tracking-wider font-bold text-gold-dark block">Personal Faith Motto</span>
+                  <p class="font-serif italic text-base sm:text-lg text-stone-800">“${escapeHTML(student.motto || "Walking with Jesus every day")}”</p>
+                </div>
+              </div>
+
+              <!-- 4 Key Progress Metrics -->
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="p-4 rounded-2xl bg-ivory border border-stone-200">
+                  <span class="text-xs font-semibold text-stone-500 block">Catechism Attendance</span>
+                  <span class="font-serif text-2xl sm:text-3xl font-bold text-emerald-700 mt-1 block">${student.attendance}%</span>
+                  <div class="w-full bg-stone-200 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-emerald-600 h-full rounded-full" style="width: ${Math.min(100, student.attendance)}%"></div>
+                  </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-ivory border border-stone-200">
+                  <span class="text-xs font-semibold text-stone-500 block">Holy Mass Participation</span>
+                  <span class="font-serif text-2xl sm:text-3xl font-bold text-maroon mt-1 block">${student.massAttendance}%</span>
+                  <div class="w-full bg-stone-200 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-maroon h-full rounded-full" style="width: ${Math.min(100, student.massAttendance)}%"></div>
+                  </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-ivory border border-stone-200">
+                  <span class="text-xs font-semibold text-stone-500 block">Term Exams (T1 + T2)</span>
+                  <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 mt-1 block">${totalMarks}<span class="text-sm font-sans font-normal text-stone-500"> / 100</span></span>
+                  <span class="text-[11px] text-stone-500 mt-1 block">Term 1: ${student.term1Marks}/50 &bull; Term 2: ${student.term2Marks}/50</span>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-ivory border border-stone-200">
+                  <span class="text-xs font-semibold text-stone-500 block">Prayers Mastered</span>
+                  <span class="font-serif text-2xl sm:text-3xl font-bold text-gold-dark mt-1 block">${prayerCount}<span class="text-sm font-sans font-normal text-stone-500"> / ${DEFAULT_PRAYERS.length}</span></span>
+                  <div class="w-full bg-stone-200 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-gold h-full rounded-full" style="width: ${prayerPct}%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Two-Column Details: Prayer Checklist & Teacher Remarks -->
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-7">
+                
+                <!-- Left: Prayers & Faith Milestones -->
+                <div class="lg:col-span-7">
+                  <h2 class="font-serif text-xl font-bold text-maroon flex items-center gap-2 mb-3.5">
+                    <i data-lucide="book-heart" class="w-5 h-5 text-gold-dark"></i>
+                    <span>Class 11 Catechism Prayers & Faith Milestones</span>
+                  </h2>
+                  <div class="space-y-2.5">
+                    ${prayersHTML}
+                  </div>
+                </div>
+
+                <!-- Right: Teacher Remarks & Parent Note -->
+                <div class="lg:col-span-5 space-y-5">
+                  <div class="p-5 rounded-2xl bg-ivory border border-gold/40">
+                    <h3 class="font-serif text-lg font-bold text-maroon flex items-center gap-2 mb-2">
+                      <i data-lucide="message-square-heart" class="w-5 h-5 text-gold-dark"></i>
+                      <span>Teacher's Evaluation</span>
+                    </h3>
+                    <p class="text-sm text-stone-700 leading-relaxed">
+                      ${escapeHTML(student.remarks || "Making steady progress in faith and class participation.")}
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-stone-200 text-xs text-stone-500 flex items-center justify-between">
+                      <span>Dr. Likin Simon</span>
+                      <span>Class Teacher</span>
+                    </div>
+                  </div>
+
+                  <div class="p-5 rounded-2xl bg-gold-soft/70 border border-gold/40">
+                    <h3 class="font-serif text-lg font-bold text-maroon flex items-center gap-2 mb-2">
+                      <i data-lucide="home" class="w-5 h-5 text-maroon"></i>
+                      <span>Note for Parents & Home</span>
+                    </h3>
+                    <p class="text-sm text-stone-700 leading-relaxed">
+                      ${escapeHTML(student.parentNote || "Thank you for nurturing daily family prayer at home.")}
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            `}
+          </div>
+        </div>
+      `;
+
+      lucide.createIcons();
+    }
+
+    // Render Editable Form Inside Student Profile when Teacher Mode is Active
+    function renderStudentEditForm(student) {
+      const prayersCheckboxes = DEFAULT_PRAYERS.map(prayer => {
+        const checked = student.prayersLearned && student.prayersLearned.includes(prayer);
+        return `
+          <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-stone-200 bg-ivory hover:border-gold cursor-pointer">
+            <input type="checkbox" class="edit-prayer-cb w-4 h-4 accent-maroon" value="${escapeHTML(prayer)}" ${checked ? 'checked' : ''} />
+            <span class="text-xs sm:text-sm font-medium text-stone-800">${escapeHTML(prayer)}</span>
+          </label>
+        `;
+      }).join("");
+
+      return `
+        <form onsubmit="saveStudentEdits(event, ${student.id})" class="space-y-6">
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs text-amber-900 flex items-center justify-between">
+            <span>Customize any detail for <strong>${escapeHTML(student.name)}</strong> below and click <strong>Save Student Profile</strong>.</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Student Full Name</label>
+              <input type="text" id="edit-st-name" value="${escapeHTML(student.name)}" required class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm font-semibold focus:ring-2 focus:ring-gold focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Patron Saint</label>
+              <input type="text" id="edit-st-saint" value="${escapeHTML(student.patronSaint || '')}" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-gold focus:outline-none" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Personal Faith Motto</label>
+              <input type="text" id="edit-st-motto" value="${escapeHTML(student.motto || '')}" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-gold focus:outline-none" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Class Attendance (%)</label>
+              <input type="number" min="0" max="100" id="edit-st-att" value="${student.attendance}" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm font-bold focus:ring-2 focus:ring-gold focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Holy Mass (%)</label>
+              <input type="number" min="0" max="100" id="edit-st-mass" value="${student.massAttendance}" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm font-bold focus:ring-2 focus:ring-gold focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Term 1 Marks (/50)</label>
+              <input type="number" min="0" max="50" id="edit-st-t1" value="${student.term1Marks}" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm font-bold focus:ring-2 focus:ring-gold focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Term 2 Marks (/50)</label>
+              <input type="number" min="0" max="50" id="edit-st-t2" value="${student.term2Marks}" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm font-bold focus:ring-2 focus:ring-gold focus:outline-none" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Badges & Recognitions (Comma Separated)</label>
+            <input type="text" id="edit-st-badges" value="${escapeHTML((student.badges || []).join(', '))}" placeholder="e.g., Altar Server, Bible Quiz Star, 100% Punctual" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-gold focus:outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2">Prayers Mastered</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              ${prayersCheckboxes}
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Teacher's Remarks (Dr. Likin Simon)</label>
+              <textarea id="edit-st-remarks" rows="3" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-gold focus:outline-none">${escapeHTML(student.remarks || '')}</textarea>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Note for Parents & Home</label>
+              <textarea id="edit-st-parent" rows="3" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-gold focus:outline-none">${escapeHTML(student.parentNote || '')}</textarea>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-stone-200 flex flex-wrap items-center justify-end gap-3">
+            <button type="button" onclick="toggleTeacherMode()" class="px-4 py-2.5 rounded-xl border border-stone-300 text-stone-700 text-sm font-medium hover:bg-stone-100">
+              Exit Edit Mode
+            </button>
+            <button type="submit" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-maroon hover:bg-maroon-dark text-white text-sm font-bold shadow-md transition">
+              <i data-lucide="save" class="w-4 h-4"></i>
+              <span>Save Student Profile</span>
+            </button>
+          </div>
+        </form>
+      `;
+    }
+
+    function saveStudentEdits(event, id) {
+      event.preventDefault();
+      const idx = appState.students.findIndex(s => s.id === id);
+      if (idx === -1) return;
+
+      const checkedPrayers = Array.from(document.querySelectorAll(".edit-prayer-cb:checked")).map(cb => cb.value);
+      const badgesRaw = document.getElementById("edit-st-badges").value;
+      const badgesList = badgesRaw.split(",").map(b => b.trim()).filter(Boolean);
+
+      appState.students[idx] = {
+        ...appState.students[idx],
+        name: document.getElementById("edit-st-name").value.trim() || appState.students[idx].name,
+        patronSaint: document.getElementById("edit-st-saint").value.trim(),
+        motto: document.getElementById("edit-st-motto").value.trim(),
+        attendance: Math.min(100, Math.max(0, Number(document.getElementById("edit-st-att").value) || 0)),
+        massAttendance: Math.min(100, Math.max(0, Number(document.getElementById("edit-st-mass").value) || 0)),
+        term1Marks: Math.min(50, Math.max(0, Number(document.getElementById("edit-st-t1").value) || 0)),
+        term2Marks: Math.min(50, Math.max(0, Number(document.getElementById("edit-st-t2").value) || 0)),
+        badges: badgesList,
+        prayersLearned: checkedPrayers,
+        remarks: document.getElementById("edit-st-remarks").value.trim(),
+        parentNote: document.getElementById("edit-st-parent").value.trim()
+      };
+
+      persistState();
+      showToast(`Saved profile for ${appState.students[idx].name}!`);
+      renderIndividualStudent(id);
+    }
+
+    // ==================== TEACHER MODE & AUTH ====================
+    function toggleTeacherMode() {
+      if (isTeacherMode) {
+        isTeacherMode = false;
+        updateTeacherUI();
+        showToast("Teacher Maintenance Mode locked.");
+      } else {
+        document.getElementById("pin-input").value = "";
+        document.getElementById("pin-error").classList.add("hidden");
+        document.getElementById("pin-modal").classList.remove("hidden");
+        setTimeout(() => document.getElementById("pin-input").focus(), 100);
+      }
+    }
+
+    function closePinModal() {
+      document.getElementById("pin-modal").classList.add("hidden");
+    }
+
+    function verifyPin() {
+      const entered = document.getElementById("pin-input").value.trim();
+      if (entered === appState.pin || entered === "2026") {
+        isTeacherMode = true;
+        closePinModal();
+        updateTeacherUI();
+        showToast("Teacher Maintenance Mode unlocked!");
+      } else {
+        document.getElementById("pin-error").classList.remove("hidden");
+      }
+    }
+
+    function updateTeacherUI() {
+      const toolbar = document.getElementById("teacher-toolbar");
+      const btn = document.getElementById("teacher-mode-btn");
+      const icon = document.getElementById("teacher-lock-icon");
+      const label = document.getElementById("teacher-mode-label");
+
+      if (isTeacherMode) {
+        toolbar.classList.remove("hidden");
+        btn.classList.remove("bg-gold/15", "text-gold-light");
+        btn.classList.add("bg-gold", "text-maroon-dark");
+        icon.setAttribute("data-lucide", "unlock");
+        label.textContent = "Lock Editor";
+      } else {
+        toolbar.classList.add("hidden");
+        btn.classList.add("bg-gold/15", "text-gold-light");
+        btn.classList.remove("bg-gold", "text-maroon-dark");
+        icon.setAttribute("data-lucide", "lock");
+        label.textContent = "Teacher Mode";
+      }
+
+      if (currentStudentId) {
+        renderIndividualStudent(currentStudentId);
+      } else {
+        renderStudentsGrid(document.getElementById("student-search").value);
+      }
+      lucide.createIcons();
+    }
+
+    // ==================== HOME CONTENT MODAL ====================
+    function openHomeSettingsModal() {
+      document.getElementById("edit-hero-bg").value = appState.home.bgImage;
+      document.getElementById("edit-hero-thought").value = appState.home.thought;
+      document.getElementById("edit-hero-verse").value = appState.home.verse;
+      document.getElementById("edit-hero-ref").value = appState.home.verseRef;
+      document.getElementById("home-settings-modal").classList.remove("hidden");
+    }
+
+    function closeHomeSettingsModal() {
+      document.getElementById("home-settings-modal").classList.add("hidden");
+    }
+
+    function saveHomeSettings() {
+      appState.home.bgImage = document.getElementById("edit-hero-bg").value.trim() || "Jesus teaching.png";
+      appState.home.thought = document.getElementById("edit-hero-thought").value.trim();
+      appState.home.verse = document.getElementById("edit-hero-verse").value.trim();
+      appState.home.verseRef = document.getElementById("edit-hero-ref").value.trim();
+      persistState();
+      applyHomeContent();
+      closeHomeSettingsModal();
+      showToast("Class 11 Hero & Bible Verse updated!");
+    }
+
+    function handleHeroImageUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById("edit-hero-bg").value = e.target.result;
+        showToast("Image loaded! Click 'Save Changes' to apply.");
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // ==================== EXPORT STANDALONE HTML FOR GITHUB PAGES ====================
+    function exportStandaloneHTML() {
+      // Clone current document HTML and inject updated INITIAL_STATE so the exported file is 100% self-contained
+      const docClone = document.documentElement.cloneNode(true);
+      
+      // Ensure modals/toasts/teacher toolbar are reset to clean default hidden states in exported HTML
+      const toolbar = docClone.querySelector("#teacher-toolbar");
+      if (toolbar) toolbar.classList.add("hidden");
+      const toast = docClone.querySelector("#toast");
+      if (toast) toast.classList.add("hidden");
+
+      const dataScript = docClone.querySelector("#catechism-data-script");
+      if (dataScript) {
+        const serializedState = JSON.stringify(appState, null, 2);
+        dataScript.textContent = dataScript.textContent.replace(
+          /const INITIAL_STATE = \{[\s\S]*?\n    \};/,
+          `const INITIAL_STATE = ${serializedState};`
+        );
+      }
+
+      const finalHTML = "<!DOCTYPE html>\n" + docClone.outerHTML;
+      const blob = new Blob([finalHTML], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "index.html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showToast("Exported updated index.html! Upload to GitHub Pages to publish.");
+    }
+
+    // JSON Backup & Restore
+    function exportBackupJSON() {
+      const blob = new Blob([JSON.stringify(appState, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "nellikkunnu-catechism-2026-27-backup.json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Downloaded JSON backup file.");
+    }
+
+    function importBackupJSON(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const imported = JSON.parse(e.target.result);
+          if (imported && Array.isArray(imported.students)) {
+            appState = imported;
+            persistState();
+            applyHomeContent();
+            renderClassStats();
+            if (currentStudentId) {
+              renderIndividualStudent(currentStudentId);
+            } else {
+              renderStudentsGrid();
+            }
+            showToast("Backup restored successfully!");
+          }
+        } catch (err) {
+          showToast("Invalid backup JSON file.");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // Utilities
+    function copyStudentLink() {
+      const dummy = document.createElement("input");
+      document.body.appendChild(dummy);
+      dummy.value = window.location.href;
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+      showToast("Direct student link copied to clipboard!");
+    }
+
+    function openHelpModal() {
+      document.getElementById("help-modal").classList.remove("hidden");
+    }
+
+    function closeHelpModal() {
+      document.getElementById("help-modal").classList.add("hidden");
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      document.getElementById("toast-message").textContent = msg;
+      toast.classList.remove("hidden");
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 3500);
+    }
+
+    function escapeHTML(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    // Initialize App on Load & Hash Change
+    function initApp() {
+      applyHomeContent();
+      handleHashRouting();
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    }
+
+    window.addEventListener("hashchange", handleHashRouting);
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initApp);
+    } else {
+      initApp();
+    }
+  </script>
+</body>
+</html>
